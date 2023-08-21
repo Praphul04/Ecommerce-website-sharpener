@@ -1,15 +1,20 @@
-import React from "react";
-import "./App.css";
-import AvailableProduct from "./components/Content/AvailableProduct";
-import Header from "./components/Header/Header.js";
+import './App.css';
+import Header from './components/Navbar/Navbar';
+import { BrowserRouter as Router } from 'react-router-dom';
+
+import CartProvider from './components/Store/CartProvider'
+
+import Productlist from './components/products/productlist';
 
 function App() {
   return (
-    <React.Fragment>
-      <Header/>
-      <AvailableProduct/>
-    </React.Fragment>
-
+    <Router>
+      <CartProvider>
+      <Header></Header>
+     <Productlist></Productlist>
+     </CartProvider>
+    </Router>
   );
 }
+
 export default App;
