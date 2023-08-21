@@ -5,13 +5,13 @@ import CartContext from "../Store/CartContext";
 const Products=({product})=>{
 
     
-  const { addItem,items } = useContext(CartContext);
+  const { addItem,items,totalAmount } = useContext(CartContext);
 
   const addCartItem = () => {
     const newItem ={...product,amount:parseInt(1),id:Math.random()}
     addItem(newItem)
   };
-  console.log(items)
+  console.log(items,totalAmount)
   return(
     <div id="music-content" >
           <div id="album1">

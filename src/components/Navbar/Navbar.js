@@ -11,16 +11,17 @@ const Header = () => {
     setShowCart(preShowcart => !showCart )
   }
   return (
-    <div>
+    <div className="navbar">
       <header className="header">
           {Navbar.map((Element) => (
             <div className="links">
-              <Link to={Element.path}> {Element.name} </Link>
+              <Link  to={Element.path}> {Element.name} </Link>
             </div>
           ))}
         <a href="#cart" className="cart-holder" onClick={cartShowHandler}>cart<span className="cart-number">0</span></a>
         {showCart && <Cart onCartShow ={cartShowHandler}></Cart>}
       </header>
+      <h1>The Generics</h1>
     </div>
   );
 };
