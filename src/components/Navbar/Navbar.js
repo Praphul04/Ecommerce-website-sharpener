@@ -15,7 +15,7 @@ const Header = () => {
       <header className="header">
           {Navbar.map((Element) => (
             <div className="links">
-              <Link  to={Element.path}> {Element.name} </Link>
+              <Link  to={Element.path} key={Element.name}> {Element.name} </Link>
             </div>
           ))}
         <a href="#cart" className="cart-holder" onClick={cartShowHandler}>cart<span className="cart-number">0</span></a>

@@ -17,15 +17,15 @@ const removeCartItem =()=>{
    
         console.log(item)
      return(
-        <div >
-                <div className="cart-items" key={item.id}>
+        <div key={item.id}>
+                <div className="cart-items" >
                     <div className="cart-item-name" >
                     <img src={item.imageUrl} alt=''></img>
                     <span className='title'>{item.title}</span>
                     </div>
                     <div  className="cart-items-price">
                     {item.price}
-                    </div>
+                </div>
                 <div className="cart-items-quantity"> 
                 <input type='number' value='1'></input>
                 <button onClick={removeCartItem}>Remove</button>
