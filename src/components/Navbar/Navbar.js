@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { Navbar} from "./const";
 import Cart from "./Cart/cart";
-
 const Header = () => {
   const [showCart, setShowCart]= useState(false)
 
@@ -18,6 +17,7 @@ const Header = () => {
               <Link  to={Element.path} key={Element.name}> {Element.name} </Link>
             </div>
           ))}
+          
         <a href="#cart" className="cart-holder" onClick={cartShowHandler}>cart<span className="cart-number">0</span></a>
         {showCart && <Cart onCartShow ={cartShowHandler}></Cart>}
       </header>

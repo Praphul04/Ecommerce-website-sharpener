@@ -3,6 +3,10 @@ footer {
     margin-top: 40px;
     padding: 20px;
     background: #56CCF2;
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
 
 footer .footer-title {
