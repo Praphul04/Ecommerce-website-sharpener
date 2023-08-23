@@ -4,6 +4,7 @@ import CartContext from "./CartContext";
 
 const initialState={
     items:[],
+    selectedItem:[],
     totalAmount:0
 }
 const reducer=(state,action)=>{
@@ -54,10 +55,15 @@ const reducer=(state,action)=>{
         
     }
 
+    if (action.type==='DETAILS'){
+        state.selectedItem=[action.value]
+    }
+
     return {
         
         items:updateItems,
-        totalAmount:state.totalAmount
+        totalAmount:state.totalAmount,
+        selectedItem:state.selectedItem
 
     }
 
@@ -72,10 +78,15 @@ const CartProvider=(props)=>{
     const removeItemsHandler = (item)=>{
         dispatchItems({type:'REMOVE',value:item})
     }
+    const selectedItemHandler=(item)=>{
+        dispatchItems({type:'DETAILS',value:item})
+    }
 
     const cartContext = {
         items: cartState.items,
         totalAmount: cartState.totalAmount,
+        selectedItem:cartState.selectedItem,
+        selectedItemHandler:selectedItemHandler,
         addItem: addItemsHandler,
         removeItem: removeItemsHandler,
       };

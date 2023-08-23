@@ -9,7 +9,7 @@ const ContactUs = () => {
   const [formError, setFormError] = useState('');
   
   async function addCantactUsHandler(contact) {
-    const response = await fetch('https://react-http-76e5c-default-rtdb.firebaseio.com/contectus.json', {
+    const response = await fetch('https://react-http-76e5c-default-rtdb.firebaseio.com/contactus.json', {
       method: 'POST',
       body: JSON.stringify(contact),
       headers: {
