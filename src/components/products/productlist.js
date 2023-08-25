@@ -47,4 +47,3 @@ const Productlist = () => {
 };
 
 export default Productlist;
-
