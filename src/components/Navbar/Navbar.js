@@ -7,9 +7,13 @@ import AuthContext from "../Store/AuthContext";
 const Header = () => {
   const [showCart, setShowCart]= useState(false)
 
-  const {isLoggedIn} =useContext(AuthContext)
+  const {isLoggedIn,logout} =useContext(AuthContext)
 
   console.log (isLoggedIn)
+
+  const logoutHandler=()=>{
+      logout()
+  }
 
   const cartShowHandler = ()=>{
     setShowCart(preShowcart => !showCart )
@@ -18,11 +22,13 @@ const Header = () => {
     <div className="navbar">
       <header className="header"> 
             <div className="links">
-              <Link  to="/home" key="Home"> Home </Link>
-              {isLoggedIn && <Link  to="/store" key="Store"> Store </Link>}
+              <Link  to="/" key="Home"> Home </Link>
+              <Link  to="/store" key="Store"> Store </Link>
               <Link  to="/about" key="About"> About </Link>
-              <Link  to="/login" key="Login"> Login </Link>
+              {!isLoggedIn &&<Link  to="/login" key="Login"> Login </Link>}
               <Link  to="/cantactus" key="Cantact Us"> Cantact Us </Link>
+              {isLoggedIn && <Link  to="/" key="logout" onClick={logoutHandler}> Logout </Link>}
+              
             </div>
         <a href="#cart" className="cart-holder" onClick={cartShowHandler}>cart<span className="cart-number">0</span></a>
         {showCart && <Cart onCartShow ={cartShowHandler}></Cart>}
