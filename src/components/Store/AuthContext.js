@@ -27,6 +27,7 @@ export const AuthContextProvider = (props) => {
     setToken(null);
     localStorage.removeItem('token');
     localStorage.removeItem('expiration');
+    localStorage.removeItem('email')
   };
 
   useEffect(() => {
